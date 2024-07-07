@@ -12,8 +12,8 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   createServer({
-    key: '/etc/letsencrypt/live/asmbedcoding.kro.kr/fullchain.pem',
-    cert: '/etc/letsencrypt/live/asmbedcoding.kro.kr/privkey.pem',
+    key: '/etc/letsencrypt/live/asmbedcoding.kro.kr/privkey.pem',
+    cert: '/etc/letsencrypt/live/asmbedcoding.kro.kr/cert.pem',
   }, async (req, res) => {
     try {
         await handle(req, res);
