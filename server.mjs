@@ -1,4 +1,4 @@
-import createServer from 'https';
+import { createServer } from 'https';
 import next from 'next';
 import fs from 'fs';
 
