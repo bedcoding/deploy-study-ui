@@ -3,7 +3,7 @@ import next from 'next';
 import fs from 'fs';
 
 const hostname = 'asmbedcoding.kro.kr';
-const port = 443
+const port = 3000
 
 const app = next({ hostname, port })
 const handle = app.getRequestHandler()
