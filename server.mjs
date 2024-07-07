@@ -1,5 +1,6 @@
 import createServer from 'http';
 import next from 'next';
+import fs from 'fs';
 
 const hostname = 'asmbedcoding.kro.kr';
 const port = 443
@@ -7,13 +8,10 @@ const port = 443
 const app = next({ hostname, port })
 const handle = app.getRequestHandler()
 
-// Certificate is saved at: /etc/letsencrypt/live/asmbedcoding.kro.kr/fullchain.pem
-// Key is saved at:         /etc/letsencrypt/live/asmbedcoding.kro.kr/privkey.pem
-
 app.prepare().then(() => {
   createServer({
-    key: '/etc/letsencrypt/live/asmbedcoding.kro.kr/privkey.pem',
-    cert: '/etc/letsencrypt/live/asmbedcoding.kro.kr/cert.pem',
+    key: fs.readFileSync('/etc/letsencrypt/live/asmbedcoding.kro.kr/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/asmbedcoding.kro.kr/cert.pem'),
   }, async (req, res) => {
     try {
         await handle(req, res);
