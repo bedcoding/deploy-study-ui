@@ -1,5 +1,5 @@
-const { createServer } = require('http')
-const next = require('next')
+import createServer from 'http';
+import next from 'next';
 
 const hostname = 'asmbedcoding.kro.kr';
 const port = 443
