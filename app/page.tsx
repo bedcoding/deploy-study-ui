@@ -11,7 +11,7 @@ interface ArticleInfo {
 }
 
 export default function Home() {
-  const baseUrl = "http://ec2-13-124-204-197.ap-northeast-2.compute.amazonaws.com:4000";
+  const baseUrl = "https://asmbedcoding.kro.kr:4000";
 
   const { data, refetch } = useQuery({
     queryKey: ["article"],

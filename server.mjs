@@ -11,8 +11,8 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   try {
     createServer({
-      key: fs.readFileSync('/etc/letsencrypt/live/asmbedcoding.kro.kr/privkey.pem', { encoding: "utf-8" }),
-      cert: fs.readFileSync('/etc/letsencrypt/live/asmbedcoding.kro.kr/cert.pem', { encoding: "utf-8" }),
+      key: fs.readFileSync(`/etc/letsencrypt/live/${hostname}/privkey.pem`, { encoding: "utf-8" }),
+      cert: fs.readFileSync(`/etc/letsencrypt/live/${hostname}/cert.pem`, { encoding: "utf-8" }),
     }, async (req, res) => {
       try {
           await handle(req, res);
