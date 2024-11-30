@@ -1,8 +1,10 @@
 module.exports = {
     apps: [{
         name: "my-app",
-        script: "yarn",
-        args: "start",
-        interpreter: "bash"
+        script: "node_modules/.bin/next",
+        args: "start -p 3000",
+        env: {
+            NODE_ENV: "production"
+        }
     }]
 };
